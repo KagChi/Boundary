@@ -40,12 +40,12 @@ public class Movement {
             sprites.getSprite(player).FlipH = false;
             sprites.getRunSprite(player).FlipH = false;
             sprites.getJumpSprite(player).FlipH = false;
-            if (player.IsOnFloor() && !walkPlayer.Playing) walkPlayer.Play();
+            if (!player.IsOnWall() && player.IsOnFloor() && !walkPlayer.Playing) walkPlayer.Play();
         } else if (direction.x < 0) {
             sprites.getSprite(player).FlipH = true;
             sprites.getRunSprite(player).FlipH = true;
             sprites.getJumpSprite(player).FlipH = true;
-            if (player.IsOnFloor() && !walkPlayer.Playing) walkPlayer.Play();
+            if (!player.IsOnWall() && player.IsOnFloor() && !walkPlayer.Playing) walkPlayer.Play();
         }
 
         if (player.IsOnFloor() && direction.x == 0) {
@@ -53,7 +53,7 @@ public class Movement {
             sprites.getRunSprite(player).Hide();
             sprites.getJumpSprite(player).Hide();
             animationPlayer.Play("idle");
-        } else if (player.IsOnFloor() && direction.x != 0) {
+        } else if (!player.IsOnWall() && player.IsOnFloor() && direction.x != 0) {
             animationPlayer.Play("run");
             if (!sprites.getRunSprite(player).Visible) sprites.getRunSprite(player).Show();
             sprites.getSprite(player).Hide();
