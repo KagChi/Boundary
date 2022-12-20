@@ -2,24 +2,19 @@ using Godot;
 
 public class Player : KinematicBody2D
 {
-	public Movement movement;
-	Sprite sprite;
+    Movement movement;
+    Sprite sprite;
     Sprite runSprite;
     Sprite jumpSprite;
-
     AnimationPlayer animationPlayer;
-
     Camera2D Camera;
-
     AudioStreamPlayer2D jumpPlayer;
 
-
     public override void _Ready()
-	{
+    {
         movement = new Movement();
         Camera = GetNode<Camera2D>("Camera2D");
-        
-	}
+    }
 
     public override void _Input(InputEvent @event) 
     {
@@ -36,6 +31,6 @@ public class Player : KinematicBody2D
 
 	public override void _PhysicsProcess(float delta) 
     {
-		movement.move(delta, this);
-	}
+        movement.move(delta, this);
+    }
 }
