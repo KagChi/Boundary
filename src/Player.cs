@@ -29,7 +29,7 @@ public class Player : KinematicBody2D
         }
     }
 
-	public override void _PhysicsProcess(float delta) 
+    public override void _PhysicsProcess(float delta) 
     {
         movement.move(delta, this);
     }
