@@ -20,7 +20,7 @@ public class Player : KinematicBody2D
     {
         if (@event is InputEventMouseButton) {
             if (@event.IsPressed()) {
-                if (@event.IsActionPressed("wheel_down") && Camera.Zoom.x < 1.2f) {
+                if (@event.IsActionPressed("wheel_down") && Camera.Zoom.x < 1.0f) {
                     Camera.Zoom = new Vector2(Camera.Zoom.x + 0.1f, Camera.Zoom.y + 0.1f);
                 } else if (@event.IsActionPressed("wheel_up") && Camera.Zoom.x > 0.5f) {
                     Camera.Zoom = new Vector2(Camera.Zoom.x - 0.1f, Camera.Zoom.y - 0.1f); 
