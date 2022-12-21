@@ -3,7 +3,7 @@ using Godot;
 
 public class Movement {
     public Vector2 direction;
-    public float movementSpeed = 200;
+    public float movementSpeed = 300;
     public float gravity = 100;
     public float maxFallSpeed = 1000;
     public float minFallSpeed = 5;
